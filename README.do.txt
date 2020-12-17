@@ -1,5 +1,5 @@
 !bquote
-`gbox-py` is a gbox that provides a number of gboxes from Python. It is part of the standard gbox set.
+`gbox-scanpypca` is a gbox that provides principal components analysis to GranatumX.
 !equote
 
 ===== Prerequisites =====
@@ -28,12 +28,15 @@ pulled if they do not exist locally on the system. Convenience scripts are provi
 
 !bc sys
 $ gx run.sh                                  # Will start the database, taskrunner, and webapp
-$ gx installGbox.sh granatumx/gbox-py:1.0.0  # Install this gbox
+$ gx installGbox.sh granatumx/gbox-scanpypca:1.0.0  # Install this gbox
 
 # Now go to http://localhost:34567 and see this gbox installed when you add a step.
 !ec
 
 ===== Notes =====
 
-The gbox has a set of parameters passed into it on the frontend. These are defined in the `yamls/*.yaml` file.
-This tool uses mainly python functions for the granatum_sdk to set up the gbox.
+This step calculates a lower-dimension embedding of the input assay using
+    "Principal component analysis (PCA)": "https://en.wikipedia.org/wiki/Principal_component_analysis", which
+    uses orthogonal transformation to convert a set of observations of possibly
+    correlated variables into a set of values of linearly uncorrelated
+    variables.
